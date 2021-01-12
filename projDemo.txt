@@ -1,0 +1,67 @@
+1. Fill in NAMEs,IDs. Send back to TA before 4-24-2020 to schedule DEMO time
+2. DEMO with TA at scheduled time AND submit a ZIP file of YOUR project to TA
+3. Download disk1,disk2,disk3.1,disk3.2, dif2 from samples/PROJECT/ directory 
+4. KCW will schedule interview time (via ZOOM) seperately AFTER you DEMO to TA
+
+NAME________Ayush________ ID_11638482_______________  NAME_______________ ID______________
+
+LEVEL-1: Use disk (Run YOUR program as a.out disk1; a.out disk2, a.out disk3.1)
+   COMMANDS                    EXPECTED RESULTS           OBSERVED & comments
+------------------      ------------------------------  ----------------------
+startup & menu:          start up, show commands menu
+
+ls                       show contents of / directory
+
+mkdir /a ;     ls        show /a exits; ls works
+
+mkdir /a/b ;   ls /a     make dir with pathname
+
+cd    /a/b ;   pwd       cd to a pathname, show CWD
+
+cd    ../../ ; pwd       cd upward, show CWD
+
+creat f1     ; ls        creat file, show f1 is a file
+
+link  f1 f2;   ls        hard link, both linkCount=2
+
+unlink   f1;   ls        unlink f1; f2 linkCount=1
+
+symlink f2 f3; ls        symlink; ls show f3 -> f2
+
+rmdir /a/b;    ls        rmdir and show results    
+  
+LEVEL-2: Use disk2: (file1,tiny,small,large,huge)
+------------------        ---------------------------   -----------------------
+cat large                 show contents to LAST LINE
+                           === END OF large FILE ===
+cat huge                  show contents to LAST LINE
+                           === END OF huge FILE ===
+cp  large newlarge; ls    show they are SAME size
+
+cp  huge  newhuge ; ls    show they are SAME size
+
+              MUST DO THIS: exit YOUR project; 
+(In Linux): dif2          should not show any > lines   
+
+============ IF can not do cat, cp: TRY to do these for LEVEL2 ================
+open  small 0;   pfd      show fd=0 opened for R
+
+read 0 20;       pfd      show 20 chars read
+
+open file1 1;    pfd      show fd=1 opened for W 
+
+write 1 "abcde"; ls       show file1 size=5
+
+close 1; pfd              show fd=1 is closed
+
+LEVEL-3: start with disk3.1;   MOUNT disk3.2
+-------------------   ----------------------------  ----------------------------
+mount disk3.2 /mnt;       mount disk3.2 on /mnt
+
+ls /mnt                   contents of disk3.2
+
+cd /mnt/DIR1; pwd         show CWD is /mnt/DIR1
+
+mkdir ABC; ls             show ABC exits
+
+cd ../../;    pwd         show CWD=/
